@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}Page 3--Now we know everything!{% endblock %}
+
+{% block content %}
+  <h1>Your responses:</h1>
+
+<ul>
+ <li> Your responce for question 1 was: {{ session['PaintingAnswer1'] }} </li>
+ <li> Your responce for question 2 was: {{ session['PaintingAnswer2'] }} </li>
+ <li> Your responce for question 3 was: {{ session['PaintingAnswer3'] }} </li>
+</ul>
+
+
+
+{% endblock %}
