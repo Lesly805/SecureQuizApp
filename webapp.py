@@ -17,6 +17,8 @@ app.secret_key=os.environ["SECRET_KEY"]; #This is an environment variable.
 def renderMain():
     return render_template('home.html')
  
+
+
 @app.route('/startOver')
 def startOver():
     session.clear() #clears variable values and creates a new session
@@ -28,20 +30,19 @@ def renderPage1():
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    session["PaintingAnswer1"]=request.form['PaintingAnswer1']
+    session["PaintingAnswer1"]=request.form['Leonardo da Vinci']
     return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
-    session["PaintingAnswer2"]=request.form['PaintingAnswer2']
+    session["PaintingAnswer2"]=request.form['Raphael']
     return render_template('page3.html')
     
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
-    session["PaintingAnswer3"]=request.form['PaintingAnswer3']
+    session["PaintingAnswer3"]=request.form['Salvador Dalí']
     return render_template('page4.html')
     
 if __name__=="__main__":
     app.run(debug=True)
-
-
+    
