@@ -16,8 +16,6 @@ app.secret_key=os.environ["SECRET_KEY"]; #This is an environment variable.
 @app.route('/')
 def renderMain():
     return render_template('home.html')
- 
-
 
 @app.route('/startOver')
 def startOver():
@@ -30,17 +28,17 @@ def renderPage1():
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    session["PaintingAnswer1"]=request.form['Leonardo da Vinci']
+    session["PaintingAnswer1"]=request.form['PaintingAnswer1']
     return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
-    session["PaintingAnswer2"]=request.form['Raphael']
+    session["PaintingAnswer2"]=request.form['PaintingAnswer2']
     return render_template('page3.html')
     
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
-    session["PaintingAnswer3"]=request.form['Salvador Dalí']
+    session["PaintingAnswer3"]=request.form['PaintingAnswer3']
     return render_template('page4.html')
     
 if __name__=="__main__":
